@@ -10,7 +10,7 @@ namespace ParqueDiversiones
             Console.WriteLine("Bienvenidos al Sistema");
             List<Persona> personas = new List<Persona>();
             List<Persona> atracciones = new List<Persona>();
-            List<Persona> reporteCostos = new List<Persona>();
+            List<ReporteCostos> reporteCostos = new List<ReporteCostos>();
         }
     }
 }
