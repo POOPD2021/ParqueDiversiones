@@ -13,9 +13,11 @@ namespace ParqueDiversiones
         {
             this.encargado = atraccion;
         }
+
         public void AsignarAtraccion(Atraccion atraccion)
         {
 
         }
+        internal Atraccion Encargado { get => encargado;}
     }
 }
