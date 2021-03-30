@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class Usuario : Persona
+    class Empleado : Persona
     {
         private Atraccion encargado;
-        public Usuario (string nombre, DateTime fechaNacimiento, long docID, Atraccion atraccion): base (nombre,fechaNacimiento,docID)
+        public Empleado (string nombre, DateTime fechaNacimiento, long docID, Atraccion atraccion): base (nombre,fechaNacimiento,docID)
         {
             this.encargado = atraccion;
         }
