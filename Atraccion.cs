@@ -8,22 +8,35 @@ namespace ParqueDiversiones
 {
     class Atraccion
     {
-        private string codigo;
-        private string nombre;
-        private int limite_de_edad;
-        private double limite_de_estatura;
-        private double costo;
-        private string descripcion;
-        private bool operando;
+        protected string codigo;
+        protected string nombre;
+        protected int limite_de_edad;
+        protected double limite_de_estatura;
+        protected double costo;
+        protected string descripcion;
+        protected bool operando;
 
-        public string Codigo { get => codigo; set => codigo = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public int Limite_de_edad { get => limite_de_edad; set => limite_de_edad = value; }
-        public double Limite_de_estatura { get => limite_de_estatura; set => limite_de_estatura = value; }
-        public double Costo { get => costo; set => costo = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public bool Operando { get => operando; set => operando = value; }
+        protected string Codigo { get => codigo; set => codigo = value; }
+        protected string Nombre { get => nombre; set => nombre = value; }
+        protected int Limite_de_edad { get => limite_de_edad; set => limite_de_edad = value; }
+        protected double Limite_de_estatura { get => limite_de_estatura; set => limite_de_estatura = value; }
+        protected double Costo { get => costo; set => costo = value; }
+        protected string Descripcion { get => descripcion; set => descripcion = value; }
+        protected bool Operando { get => operando; set => operando = value; }
 
+        public Atraccion()
+        {
+            
+        }
 
+        public bool Ingresar()
+        {
+            return true;
+        }
+
+        private void CalcularCosto()
+        {
+
+        }
     }
 }
