@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ParqueDiversiones
 {
@@ -6,9 +7,10 @@ namespace ParqueDiversiones
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Holi c:");
-            Console.WriteLine("a");
+            Console.WriteLine("Bienvenidos al Sistema");
+            List<Persona> personas = new List<Persona>();
+            List<Persona> atracciones = new List<Persona>();
+            List<Persona> reporteCostos = new List<Persona>();
         }
     }
 }
