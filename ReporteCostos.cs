@@ -14,6 +14,15 @@ namespace ParqueDiversiones
         private double costosDiaTotales;
         private DateTime fecha;
 
+        public ReporteCostos(double nroIngresosDia, double ingresosDiaAtraccion, double costosDiaAtraccion, double costosDiaTotales, DateTime fecha)
+        {
+            this.nroIngresosDia = nroIngresosDia;
+            this.ingresosDiaAtraccion = ingresosDiaAtraccion;
+            this.costosDiaAtraccion = costosDiaAtraccion;
+            this.costosDiaTotales = costosDiaTotales;
+            this.fecha = fecha;
+        }
+
         public double NroIngresosDia { get => nroIngresosDia;}
         public double IngresosDiaAtraccion { get => ingresosDiaAtraccion;}
         public double CostosDiaAtraccion { get => costosDiaAtraccion;}
