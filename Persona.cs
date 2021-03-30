@@ -8,5 +8,6 @@ namespace ParqueDiversiones
 {
     class Persona
     {
+        private string nombre;
     }
 }
