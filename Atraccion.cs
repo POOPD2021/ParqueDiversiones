@@ -24,7 +24,7 @@ namespace ParqueDiversiones
         protected string Descripcion { get => descripcion; set => descripcion = value; }
         protected bool Operando { get => operando; set => operando = value; }
 
-        public Atraccion()
+        public Atraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion)
         {
             
         }
