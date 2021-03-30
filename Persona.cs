@@ -9,5 +9,6 @@ namespace ParqueDiversiones
     class Persona
     {
         private string nombre;
+        private long docID;
     }
 }
