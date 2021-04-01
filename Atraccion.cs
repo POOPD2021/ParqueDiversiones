@@ -16,13 +16,13 @@ namespace ParqueDiversiones
         protected string descripcion;
         protected bool operando;
 
-        protected string Codigo { get => codigo; set => codigo = value; }
-        protected string Nombre { get => nombre; set => nombre = value; }
-        protected int Limite_de_edad { get => limite_de_edad; set => limite_de_edad = value; }
-        protected double Limite_de_estatura { get => limite_de_estatura; set => limite_de_estatura = value; }
-        protected double Costo { get => costo; set => costo = value; }
-        protected string Descripcion { get => descripcion; set => descripcion = value; }
-        protected bool Operando { get => operando; set => operando = value; }
+        protected string Codigo { get => codigo; }
+        protected string Nombre { get => nombre; }
+        protected int Limite_de_edad { get => limite_de_edad; }
+        protected double Limite_de_estatura { get => limite_de_estatura; }
+        protected double Costo { get => costo; }
+        protected string Descripcion { get => descripcion; }
+        protected bool Operando { get => operando; }
 
         public Atraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion)
         {
