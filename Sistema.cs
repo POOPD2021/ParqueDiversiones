@@ -12,7 +12,43 @@ namespace ParqueDiversiones
             List<Atraccion> atracciones = new List<Atraccion>();
             List<ReporteCostos> reporteCostos = new List<ReporteCostos>();
 
-            static void GenerarReporte()
+            int opcion = default;
+            do
+            {
+                try
+                {
+                    Menu();
+
+                    switch (opcion = int.Parse(Console.ReadLine()))
+                    {
+
+                        case 1:
+                            
+                            break;
+                       
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.WriteLine("Error: " + e.Message);
+                }
+            } while (opcion != 0);
+        }
+        static void Menu()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("");
+            Console.WriteLine("==[Menu]=================================");
+            Console.WriteLine("[1] Crear Proyecto");
+            Console.WriteLine("[2] Añadir integrantes");
+            Console.WriteLine("[3] Ver lista de proyectos");
+            Console.WriteLine("[0] Salir");
+            Console.WriteLine("=========================================");
+        }
+
+        static void GenerarReporte()
             {
 
             }
