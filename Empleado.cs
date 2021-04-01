@@ -9,9 +9,9 @@ namespace ParqueDiversiones
     class Empleado : Persona
     {
         private Atraccion encargado;
-        public Empleado (string nombre, DateTime fechaNacimiento, long docID, Atraccion atraccion): base (nombre,fechaNacimiento,docID)
+        public Empleado (string nombre, DateTime fechaNacimiento, long docID): base (nombre,fechaNacimiento,docID)
         {
-            this.encargado = atraccion;
+            
         }
 
         public void AsignarAtraccion(Atraccion atraccion)

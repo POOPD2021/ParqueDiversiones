@@ -27,7 +27,16 @@ namespace ParqueDiversiones
                             break;
 
                         case 2:
-                            RegistrarEmpleado();
+                            Console.WriteLine("Por favor, ingrese su nombre");
+                            string nombre = Console.ReadLine();
+
+                            Console.WriteLine("Por favor, ingrese su documento de identidad");
+                            long docID = long.Parse(Console.ReadLine());
+
+                            Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
+                            DateTime fechaNacimiento = default;
+
+                            RegistrarEmpleado(nombre, docID, fechaNacimiento, personas);
                             break;
 
                         case 3:
@@ -85,19 +94,9 @@ namespace ParqueDiversiones
 
         }
        
-        static void RegistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, int edad)
+        static void RegistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, List<Persona> personas)
         {
-            Console.WriteLine("Por favor, ingrese su nombre");
-            nombre = Console.ReadLine();
-
-            Console.WriteLine("Por favor, ingrese su documento de identidad");
-            docID = long.Parse(Console.ReadLine());
-
-            Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
-            fechaNacimiento = Console.ReadLine();
-
-            Console.WriteLine("Por favor, ingrese su edad");
-            edad = int.Parse(Console.ReadLine());
+            personas.Add(new Empleado(nombre, fechaNacimiento, docID));
         }
 
         static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, int edad, double estatura, Manilla dueño)
