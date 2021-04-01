@@ -80,39 +80,39 @@ namespace ParqueDiversiones
             Console.WriteLine("=========================================");
         }
 
-            static void GenerarReporte()
-            {
+        static void GenerarReporte()
+        {
 
-            }
+        }
        
-            static void RegistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, int edad)
-            {
+        static void RegistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, int edad)
+        {
 
-            }
+        }
 
-            static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, int edad, double estatura, Manilla dueño)
-            {
+        static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, int edad, double estatura, Manilla dueño)
+        {
+        
+        }
 
-            }
+        static void GenerarManilla(double saldo)
+        {
+        
+        }
 
-            static void GenerarManilla(double saldo)
-            {
+        static void RegistrarAtraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, bool operando)
+        {
+        
+        }
 
-            }
+        static void ConsutarInfoAtraccion(Atraccion atraccion)
+        {
+        
+        }
 
-            static void RegistrarAtraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, bool operando)
-            {
+        static void ConsultarInfoPersona(Persona persona)
+        {
 
-            }
-
-            static void ConsutarInfoAtraccion(Atraccion atraccion)
-            {
-
-            }
-
-            static void ConsultarInfoPersona(Persona persona)
-            {
-
-            }
+        }                
     }
 }
