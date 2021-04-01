@@ -13,11 +13,10 @@ namespace ParqueDiversiones
             private Double estatura;
             public Usuario(string nombre, DateTime fechaNacimiento, long docID, Manilla dueño, Double estatura) : base(nombre, fechaNacimiento, docID)
             {
-                this.dueño = dueño;
+               this.dueño = dueño;
                this.estatura = estatura;
             }
-
         public double Estatura { get => estatura; }
         internal Manilla Dueño { get => dueño;  }
-    }
+        }
 }
