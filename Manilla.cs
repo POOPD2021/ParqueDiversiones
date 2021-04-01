@@ -19,14 +19,16 @@ namespace ParqueDiversiones
 
         public double Saldo { get => saldo; }
         internal List<Ingreso> IngresosAtracciones { get => ingresosAtracciones; }
-    }
-    public void EntrarAtraccion(Atraccion atraccion)
-    {
 
-    }
+        public void EntrarAtraccion(Atraccion atraccion)
+        {
 
-    public void RecargarManilla(double recargar)
-    {
+        }
 
+        public void RecargarManilla(double recargar)
+        {
+
+        }
     }
+    
 }
