@@ -26,7 +26,12 @@ namespace ParqueDiversiones
 
         public Atraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion)
         {
-            
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.limite_de_edad = limite_de_edad;
+            this.limite_de_estatura = limite_de_estatura;
+            this.costo = costo;
+            this.descripcion = descripcion;
         }
 
         public bool Ingresar()
