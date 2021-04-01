@@ -11,10 +11,9 @@ namespace ParqueDiversiones
         private double saldo;
         List<Ingreso> ingresosAtracciones = new List<Ingreso>();
 
-        public Manilla(double saldo, List<Ingreso> ingresosAtracciones)
+        public Manilla(double saldo)
         {
             this.saldo = saldo;
-            this.ingresosAtracciones = ingresosAtracciones;
         }
 
         public double Saldo { get => saldo; }

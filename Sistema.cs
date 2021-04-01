@@ -40,7 +40,19 @@ namespace ParqueDiversiones
                             break;
 
                         case 3:
-                            RegistrarUsuario();
+                            Console.WriteLine("Por favor, ingrese su nombre");
+                            string nombreUsuario = Console.ReadLine();
+
+                            Console.WriteLine("Por favor, ingrese su documento de identidad");
+                            long docIDUsuario = long.Parse(Console.ReadLine());
+
+                            Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
+                            DateTime fechaNacimientoUsuario = default;
+
+                            Console.WriteLine("Por favor, ingrese su estatura");
+                            double estatura = double.Parse(Console.ReadLine());
+
+                            RegistrarUsuario(nombreUsuario, docIDUsuario, fechaNacimientoUsuario, estatura, personas);
                             break;
 
                         case 4:
@@ -99,19 +111,14 @@ namespace ParqueDiversiones
             personas.Add(new Empleado(nombre, fechaNacimiento, docID));
         }
 
-        static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, int edad, double estatura, Manilla dueño)
+        static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, double estatura, List<Persona> personas)
         {
-        
-        }
-
-        static void GenerarManilla(double saldo)
-        {
-        
+            personas.Add(new Usuario(nombre, fechaNacimiento, docID, estatura));
         }
 
         static void RegistrarAtraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, bool operando)
         {
-        
+
         }
 
         static void ConsutarInfoAtraccion(Atraccion atraccion)
