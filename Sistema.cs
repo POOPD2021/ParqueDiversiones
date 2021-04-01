@@ -23,9 +23,36 @@ namespace ParqueDiversiones
                     {
 
                         case 1:
+                            GenerarReporte();
+                            break;
+
+                        case 2:
+                            RegistrarEmpleado();
+                            break;
+
+                        case 3:
+                            RegistrarUsuario();
+                            break;
+
+                        case 4:
+                            GenerarManilla();
+                            break;
+
+                        case 5:
+                            RegistrarAtraccion();
+                            break;
+
+                        case 6:
+                            ConsutarInfoAtraccion();
+                            break;
+
+                        case 7:
+                            ConsultarInfoPersona();
+                            break;
+
+                        case 8:
                             
                             break;
-                       
                     }
                 }
                 catch (Exception e)
@@ -41,29 +68,34 @@ namespace ParqueDiversiones
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("");
             Console.WriteLine("==[Menu]=================================");
-            Console.WriteLine("[1] Crear Proyecto");
-            Console.WriteLine("[2] Añadir integrantes");
-            Console.WriteLine("[3] Ver lista de proyectos");
+            Console.WriteLine("[1] Generar reporte");
+            Console.WriteLine("[2] Registrar empleado");
+            Console.WriteLine("[3] Registrar usuario");
+            Console.WriteLine("[4] Generar manilla");
+            Console.WriteLine("[5] Registrar atracción");
+            Console.WriteLine("[6] Consultar información atracción");
+            Console.WriteLine("[7] Consultar información persona");   
+            Console.WriteLine("[8] Asignar atracción a un empleado");
             Console.WriteLine("[0] Salir");
             Console.WriteLine("=========================================");
         }
 
-        static void GenerarReporte()
+            static void GenerarReporte()
             {
 
             }
-
-            static void ResgistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, int edad)
-            {
-
-            }
-
-            static void GenerarManilla(double saldo)
+       
+            static void RegistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, int edad)
             {
 
             }
 
             static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, int edad, double estatura, Manilla dueño)
+            {
+
+            }
+
+            static void GenerarManilla(double saldo)
             {
 
             }
@@ -82,6 +114,5 @@ namespace ParqueDiversiones
             {
 
             }
-        }
     }
 }
