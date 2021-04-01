@@ -87,7 +87,17 @@ namespace ParqueDiversiones
        
         static void RegistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, int edad)
         {
+            Console.WriteLine("Por favor, ingrese su nombre");
+            nombre = Console.ReadLine();
 
+            Console.WriteLine("Por favor, ingrese su documento de identidad");
+            docID = long.Parse(Console.ReadLine());
+
+            Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
+            fechaNacimiento = Console.ReadLine();
+
+            Console.WriteLine("Por favor, ingrese su edad");
+            edad = int.Parse(Console.ReadLine());
         }
 
         static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, int edad, double estatura, Manilla dueño)
