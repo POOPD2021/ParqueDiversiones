@@ -65,7 +65,7 @@ namespace ParqueDiversiones
                             string res = Console.ReadLine().ToUpper();
                             if (res == "S")
                             {
-                                string path = "C:\\Users\\User\\Desktop\\Universidad\\POO\\Atracciones PD.txt";
+                                string path = "Atracciones_PD.txt";
                                 string linea = "";
                                 string[] arregloAtr;
                                 StreamReader file = new StreamReader(path);
@@ -74,25 +74,25 @@ namespace ParqueDiversiones
                                 {
                                     arregloAtr = linea.Split('|');
 
-                                    Console.WriteLine(arregloAtr.Length);
-                                    
-                                    for (int i = 1; i < arregloAtr.Length; i++)
-                                    {
                                         if (arregloAtr[0].ToString() == "MC")
                                         {
                                             atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
                                         }
-                                        else if (arregloAtr[0].ToString() == "AC")
+                                        if (arregloAtr[0].ToString() == "AC")
                                         {
                                             atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
                                         }
-                                        else if (arregloAtr[0].ToString() == "VI")
+                                        if (arregloAtr[0].ToString() == "VI")
                                         {
                                             atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
-                                        } 
-                                    }
+
+                                        }
+                                 
 
                                     linea = file.ReadLine();
+
                                 }
                             }
 
