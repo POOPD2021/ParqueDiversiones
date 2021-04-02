@@ -167,7 +167,7 @@ namespace ParqueDiversiones
             {
                 foreach (var item in atracciones)
                 {
-                    Console.WriteLine(atracciones.IndexOf(item) + 1 + " )" + " Código: " + item.Codigo + " Nombre: " + item.Nombre + " Límite de Edad:" + item.Limite_de_edad + " Límite de Estatura:" + item.Limite_de_estatura + " Costo:" + item.Costo + " Descripción:" + item.Descripcion);
+                    Console.WriteLine(atracciones.IndexOf(item) + 1 + " )" + " Código: " + item.Codigo + " \n Nombre: " + item.Nombre + " \n Límite de Edad:" + item.Limite_de_edad + " \n Límite de Estatura:" + item.Limite_de_estatura + " \n Costo:" + item.Costo + "\n  Descripción:" + item.Descripcion);
                     Console.WriteLine();
                 }
             }
