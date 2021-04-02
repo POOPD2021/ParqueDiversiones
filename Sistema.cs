@@ -36,7 +36,7 @@ namespace ParqueDiversiones
                             long docID = long.Parse(Console.ReadLine());
 
                             Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
-                            DateTime fechaNacimiento = default;
+                            DateTime fechaNacimiento = SolicitarFecha();
 
                             RegistrarEmpleado(nombre, docID, fechaNacimiento, personas);
 
@@ -51,7 +51,7 @@ namespace ParqueDiversiones
                             long docIDUsuario = long.Parse(Console.ReadLine());
 
                             Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
-                            DateTime fechaNacimientoUsuario = default;
+                            DateTime fechaNacimientoUsuario = SolicitarFecha();
 
                             Console.WriteLine("Por favor, ingrese su estatura");
                             double estatura = double.Parse(Console.ReadLine());
@@ -182,6 +182,24 @@ namespace ParqueDiversiones
         static void ConsultarInfoPersona(Persona persona)
         {
 
-        }                
+        }
+         static DateTime SolicitarFecha()
+        {
+            string[] fecha = new string[2];
+            int[] fechaInt = new int[2];
+            string linea = "";
+            DateTime fechaNacimiento;
+
+            Console.WriteLine("Escriba la fecha de nacimiento de " + " formato: Año/Mes/Dia");
+            linea = Console.ReadLine();
+            for (int i = 0; i < 2; i++)
+            {
+                fecha = (linea.Split('/'));
+            }
+            fechaInt = Array.ConvertAll(fecha, int.Parse);
+            fechaNacimiento = new DateTime(fechaInt[0], fechaInt[1], fechaInt[2]);
+
+            return fechaNacimiento;
+        }
     }
 }
