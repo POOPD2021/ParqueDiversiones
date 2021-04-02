@@ -8,6 +8,7 @@ namespace ParqueDiversiones
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Bienvenidos al Sistema");
             List<Persona> personas = new List<Persona>();
             List<Atraccion> atracciones = new List<Atraccion>();
