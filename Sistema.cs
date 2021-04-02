@@ -190,7 +190,7 @@ namespace ParqueDiversiones
             string linea = "";
             DateTime fechaNacimiento;
 
-            Console.WriteLine("Escriba la fecha de nacimiento en formato: Año/Mes/Dia");
+            Console.WriteLine("Escriba la fecha de nacimiento en  formato: Año/Mes/Dia");
             linea = Console.ReadLine();
             for (int i = 0; i < 2; i++)
             {

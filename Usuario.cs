@@ -14,15 +14,15 @@ namespace ParqueDiversiones
         public Usuario(string nombre, DateTime fechaNacimiento, long docID, Double estatura) : base(nombre, fechaNacimiento, docID)
         { 
             this.estatura = estatura;
-            GenerarManilla(0);
+            GenerarManilla();
         }
 
         public double Estatura { get => estatura; }
         internal Manilla Dueño { get => dueño; }
 
-        public void GenerarManilla(double saldo)
+        public void GenerarManilla()
         {
-            dueño = new Manilla(saldo);
+            dueño = new Manilla();
         }
     }
 }
