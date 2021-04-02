@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ParqueDiversiones
 {
@@ -37,6 +38,8 @@ namespace ParqueDiversiones
                             DateTime fechaNacimiento = default;
 
                             RegistrarEmpleado(nombre, docID, fechaNacimiento, personas);
+
+                            Console.WriteLine("Se ha registrado un empleado con éxito");
                             break;
 
                         case 3:
@@ -53,26 +56,63 @@ namespace ParqueDiversiones
                             double estatura = double.Parse(Console.ReadLine());
 
                             RegistrarUsuario(nombreUsuario, docIDUsuario, fechaNacimientoUsuario, estatura, personas);
+
+                            Console.WriteLine("Se ha registrado el usuario con éxito y se le ha asignado una manilla con un saldo de $0");
                             break;
 
                         case 4:
-                            GenerarManilla();
+                            Console.WriteLine("¿Desea registrar las atracciones desde un archivo? s/n");
+                            string res = Console.ReadLine().ToUpper();
+                            if (res == "S")
+                            {
+                                string path = "C:\\Users\\User\\Desktop\\Universidad\\POO\\Atracciones PD.txt";
+                                string linea = "";
+                                string[] arregloAtr;
+                                StreamReader file = new StreamReader(path);
+                                linea = file.ReadLine();
+                                while (linea != null)
+                                {
+                                    arregloAtr = linea.Split('|');
+
+                                    Console.WriteLine(arregloAtr.Length);
+                                    
+                                    for (int i = 1; i < arregloAtr.Length; i++)
+                                    {
+                                        if (arregloAtr[0].ToString() == "MC")
+                                        {
+                                            atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+                                        }
+                                        else if (arregloAtr[0].ToString() == "AC")
+                                        {
+                                            atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+                                        }
+                                        else if (arregloAtr[0].ToString() == "VI")
+                                        {
+                                            atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+                                        } 
+                                    }
+
+                                    linea = file.ReadLine();
+                                }
+                            }
+
+                            //RegistrarAtraccion();
                             break;
 
                         case 5:
-                            RegistrarAtraccion();
+                            
                             break;
 
                         case 6:
-                            ConsutarInfoAtraccion();
+                            //ConsutarInfoAtraccion();
                             break;
 
                         case 7:
-                            ConsultarInfoPersona();
+                            //ConsultarInfoPersona();
                             break;
 
                         case 8:
-                            
+                            ListarAtracciones(atracciones);
                             break;
                     }
                 }
@@ -92,11 +132,11 @@ namespace ParqueDiversiones
             Console.WriteLine("[1] Generar reporte");
             Console.WriteLine("[2] Registrar empleado");
             Console.WriteLine("[3] Registrar usuario");
-            Console.WriteLine("[4] Generar manilla");
-            Console.WriteLine("[5] Registrar atracción");
-            Console.WriteLine("[6] Consultar información atracción");
-            Console.WriteLine("[7] Consultar información persona");   
-            Console.WriteLine("[8] Asignar atracción a un empleado");
+            Console.WriteLine("[4] Registrar atracción");
+            Console.WriteLine("[5] Consultar información atracción");
+            Console.WriteLine("[6] Consultar información persona");   
+            Console.WriteLine("[7] Asignar atracción a un empleado");
+            Console.WriteLine("[8] Listar atracciones");
             Console.WriteLine("[0] Salir");
             Console.WriteLine("=========================================");
         }
@@ -116,14 +156,26 @@ namespace ParqueDiversiones
             personas.Add(new Usuario(nombre, fechaNacimiento, docID, estatura));
         }
 
-        static void RegistrarAtraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, bool operando)
+        static void RegistrarAtraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, bool operando, List<Atraccion> atracciones)
         {
 
         }
 
+        static void ListarAtracciones(List<Atraccion> atracciones)
+        {
+            if (atracciones.Count > 0)
+            {
+                foreach (var item in atracciones)
+                {
+                    Console.WriteLine(atracciones.IndexOf(item) + 1 + " )" + " Código: " + item.Codigo + " Nombre: " + item.Nombre + " Límite de Edad:" + item.Limite_de_edad + " Límite de Estatura:" + item.Limite_de_estatura + " Costo:" + item.Costo + " Descripción:" + item.Descripcion);
+                    Console.WriteLine();
+                }
+            }
+        }
+        
         static void ConsutarInfoAtraccion(Atraccion atraccion)
         {
-        
+            
         }
 
         static void ConsultarInfoPersona(Persona persona)
