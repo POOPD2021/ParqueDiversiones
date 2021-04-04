@@ -117,6 +117,7 @@ namespace ParqueDiversiones
                             break;
 
                         case 8:
+                          
                             Console.WriteLine("Escoja la atracción que quiere asignar al empleado: ");
                             ListarAtracciones(atracciones);
                             int atrSeleccionada = int.Parse(Console.ReadLine()) - 1;
@@ -191,6 +192,10 @@ namespace ParqueDiversiones
                     Console.WriteLine(atracciones.IndexOf(item) + 1 + " )" + "|Tipo: " + item.GetType().Name+ "| Código: " + item.Codigo + "  |Nombre: " + item.Nombre +"| Costo: " +item.Costo) ;
                     Console.WriteLine();
                 }
+            }
+            else
+            {
+                throw new Exception("No hay atracciones inscritas");
             }
         }
         
