@@ -85,7 +85,6 @@ namespace ParqueDiversiones
                             break;
 
                         case 8:
-                          
                             Console.WriteLine("Escoja la atracción que quiere asignar al empleado: ");
                             ListarAtracciones(atracciones);
                             int atrSeleccionada = int.Parse(Console.ReadLine()) - 1;
