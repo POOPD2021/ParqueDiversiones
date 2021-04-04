@@ -64,41 +64,7 @@ namespace ParqueDiversiones
                             break;
 
                         case 4:
-                            Console.WriteLine("¿Desea registrar las atracciones desde un archivo? s/n");
-                            string res = Console.ReadLine().ToUpper();
-                            if (res == "S")
-                            {
-                                string path = "Atracciones_PD.txt";
-                                string linea = "";
-                                string[] arregloAtr;
-                                StreamReader file = new StreamReader(path);
-                                linea = file.ReadLine();
-                                while (linea != null)
-                                {
-                                    arregloAtr = linea.Split('|');
-
-                                    if (arregloAtr[0].ToString() == "MC")
-                                    {
-                                        atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
-
-                                    }
-                                    if (arregloAtr[0].ToString() == "AC")
-                                    {
-                                        atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
-
-                                    }
-                                    if (arregloAtr[0].ToString() == "VI")
-                                    {
-                                        atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
-
-                                    }
-
-
-                                    linea = file.ReadLine();
-
-                                }
-                            }
-
+                            ActualizarInfoAtr(atracciones);
                             //RegistrarAtraccion();
                             break;
 
@@ -261,6 +227,38 @@ namespace ParqueDiversiones
             fechaNacimiento = new DateTime(fechaInt[0], fechaInt[1], fechaInt[2]);
 
             return fechaNacimiento;
+        }
+        static void ActualizarInfoAtr(List<Atraccion> atracciones)
+        {
+            string path = "Atracciones_PD.txt";
+            string linea = "";
+            string[] arregloAtr;
+            StreamReader file = new StreamReader(path);
+            linea = file.ReadLine();
+            while (linea != null)
+            {
+                arregloAtr = linea.Split('|');
+
+                if (arregloAtr[0].ToString() == "MC")
+                {
+                    atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
+                }
+                if (arregloAtr[0].ToString() == "AC")
+                {
+                    atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
+                }
+                if (arregloAtr[0].ToString() == "VI")
+                {
+                    atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
+                }
+
+
+                linea = file.ReadLine();
+
+            }
         }
     }
 }
