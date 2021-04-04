@@ -11,7 +11,7 @@ namespace ParqueDiversiones
         private Atraccion encargado;
         public Empleado (string nombre, DateTime fechaNacimiento, long docID): base (nombre,fechaNacimiento,docID)
         {
-            
+            encargado = null;
         }
 
         public void AsignarAtraccion(Atraccion atraccion)
@@ -19,5 +19,16 @@ namespace ParqueDiversiones
             encargado = atraccion;
         }
         public Atraccion Encargado { get => encargado;}
+        public string  ConsultarInfoAtraccion()
+        {
+            if (encargado != null)
+            {
+                return encargado.Nombre;           
+            }
+            else
+            {
+                return "N/A";
+            }
+        }
     }
 }

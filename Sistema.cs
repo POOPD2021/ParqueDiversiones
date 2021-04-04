@@ -119,7 +119,16 @@ namespace ParqueDiversiones
                         case 8:
                             Console.WriteLine("Escoja la atracción que quiere asignar al empleado: ");
                             ListarAtracciones(atracciones);
-                            int atrSeleccionada = int.Parse(Console.ReadLine());
+                            int atrSeleccionada = int.Parse(Console.ReadLine()) - 1;
+
+                            personas.Sort((s1, s2) => s1.GetType().Name.CompareTo(s2.GetType().Name));
+                            Console.WriteLine("Escoja el empleado a asignar la atracción ");
+
+                            ConsultarInfoEmpleados(personas);
+                            int emplSeleccionado = int.Parse(Console.ReadLine()) - 1;
+                            Empleado empleado=  personas[emplSeleccionado] as Empleado;
+                            empleado.AsignarAtraccion(atracciones[atrSeleccionada]);
+                            Console.WriteLine("Atraccion asignada con éxito");
 
                             break;
                         case 9:
@@ -195,12 +204,12 @@ namespace ParqueDiversiones
         static void ConsultarInfoUsuarios(List<Persona> personas)
         {
             int contadorUsuarios = default;
-            foreach (var usuario in personas)
+            foreach (var item in personas)
             {
-                    var item = usuario as Usuario;
-                    if (item != null)
+                    var usuario = item as Usuario;
+                    if (usuario != null)
                     {
-                    Console.WriteLine(personas.IndexOf(usuario) + 1 + " )" + "| Tipo: " + item.GetType().Name + "  | Nombre: " + item.Nombre + "| Documento: " + item.DocID + "| Edad: " + item.Edad + "| Estaura:" + item.Estatura);
+                    Console.WriteLine(contadorUsuarios + 1 + " )" + "| Tipo: " + usuario.GetType().Name + "  | Nombre: " + usuario.Nombre + "| Documento: " + usuario.DocID + "| Edad: " + usuario.Edad + "| Estaura:" + usuario.Estatura);
                     contadorUsuarios++;
                     }
             }
@@ -216,9 +225,9 @@ namespace ParqueDiversiones
             foreach (var item in personas)
             {
                 var empleado = item as Empleado;
-                if (item != null)
+                if (empleado != null)
                 {
-                    Console.WriteLine(personas.IndexOf(item) + 1 + " )" + "| Tipo: " + item.GetType().Name + "  | Nombre: " + empleado.Nombre + "| Documento: " + empleado.DocID + "| Edad: " + item.Edad + "| Atraccion asignada :" + empleado.Encargado.Nombre);
+                    Console.WriteLine(contadorEmpleados + 1 + " )" + "| Tipo: " + empleado.GetType().Name + "  | Nombre: " + empleado.Nombre + "| Documento: " + empleado.DocID + "| Edad: " + empleado.Edad + "| Atraccion encargada: " + empleado.ConsultarInfoAtraccion());
                     contadorEmpleados++;
                 }
             }
