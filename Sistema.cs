@@ -29,36 +29,38 @@ namespace ParqueDiversiones
                             break;
 
                         case 2:
+                            Console.WriteLine("¿Usuario o empleado? [1] o [2]");
+                            int tipoPersona = int.Parse(Console.ReadLine());
                             Console.WriteLine("Por favor, ingrese su nombre");
                             string nombre = Console.ReadLine();
-
                             Console.WriteLine("Por favor, ingrese su documento de identidad");
                             long docID = long.Parse(Console.ReadLine());
-
                             Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
                             DateTime fechaNacimiento = SolicitarFecha();
 
-                            RegistrarEmpleado(nombre, docID, fechaNacimiento, personas);
+                            if (tipoPersona == 1)
+                            {
+                              
+                                Console.WriteLine("Por favor, ingrese su estatura");
+                                double estatura = double.Parse(Console.ReadLine());
 
-                            Console.WriteLine("Se ha registrado un empleado con éxito");
+                                RegistrarUsuario(nombre, docID, fechaNacimiento, estatura, personas);
+
+                                Console.WriteLine("Se ha registrado el usuario con éxito y se le ha asignado una manilla con un saldo de $0");
+                            }
+                            else if (tipoPersona == 2)
+                            {
+                                RegistrarEmpleado(nombre, docID, fechaNacimiento, personas);
+                                Console.WriteLine("Se ha registrado un empleado con éxito");
+
+                            }
+
+
                             break;
 
                         case 3:
-                            Console.WriteLine("Por favor, ingrese su nombre");
-                            string nombreUsuario = Console.ReadLine();
-
-                            Console.WriteLine("Por favor, ingrese su documento de identidad");
-                            long docIDUsuario = long.Parse(Console.ReadLine());
-
-                            Console.WriteLine("Por favor, ingrese su fecha de nacimiento");
-                            DateTime fechaNacimientoUsuario = SolicitarFecha();
-
-                            Console.WriteLine("Por favor, ingrese su estatura");
-                            double estatura = double.Parse(Console.ReadLine());
-
-                            RegistrarUsuario(nombreUsuario, docIDUsuario, fechaNacimientoUsuario, estatura, personas);
-
-                            Console.WriteLine("Se ha registrado el usuario con éxito y se le ha asignado una manilla con un saldo de $0");
+                           
+                           
                             break;
 
                         case 4:
@@ -151,8 +153,8 @@ namespace ParqueDiversiones
             Console.WriteLine("");
             Console.WriteLine("==[Menu]=================================");
             Console.WriteLine("[1] Generar reporte");
-            Console.WriteLine("[2] Registrar empleado");
-            Console.WriteLine("[3] Registrar usuario");
+            Console.WriteLine("[2] Registrar persona");
+            Console.WriteLine("[3] Recargar manilla");
             Console.WriteLine("[4] Registrar atracción");
             Console.WriteLine("[5] Consultar información atracción");
             Console.WriteLine("[6] Consultar información usuarios");
