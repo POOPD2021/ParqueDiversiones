@@ -16,8 +16,8 @@ namespace ParqueDiversiones
 
         public void AsignarAtraccion(Atraccion atraccion)
         {
-
+            encargado = atraccion;
         }
-        internal Atraccion Encargado { get => encargado;}
+        public Atraccion Encargado { get => encargado;}
     }
 }

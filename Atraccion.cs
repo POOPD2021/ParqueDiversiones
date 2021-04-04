@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class Atraccion
+    abstract class Atraccion
     {
         protected string codigo;
         protected string nombre;
@@ -22,7 +22,7 @@ namespace ParqueDiversiones
         public double Limite_de_estatura { get => limite_de_estatura; }
         public double Costo { get => costo; }
         public string Descripcion { get => descripcion; }
-        public bool Operando { get => operando; }
+        protected bool Operando { get => operando; set => operando = value; }
 
         public Atraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion)
         {
@@ -32,6 +32,7 @@ namespace ParqueDiversiones
             this.limite_de_estatura = limite_de_estatura;
             this.costo = costo;
             this.descripcion = descripcion;
+            Operando = false;
         }
 
         public bool Ingresar()
@@ -39,9 +40,20 @@ namespace ParqueDiversiones
             return true;
         }
 
-        private void CalcularCosto()
+        protected virtual void CalcularCosto()
         {
 
+        }
+        public string ConsultarEstado()
+        {
+            if (operando)
+            {
+                return "Está funcionando ahora mismo";
+            }
+            else
+            {
+                return "No está funcionando en estos momentos";
+            }
         }
     }
 }

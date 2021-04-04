@@ -75,22 +75,22 @@ namespace ParqueDiversiones
                                 {
                                     arregloAtr = linea.Split('|');
 
-                                        if (arregloAtr[0].ToString() == "MC")
-                                        {
-                                            atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+                                    if (arregloAtr[0].ToString() == "MC")
+                                    {
+                                        atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
 
-                                        }
-                                        if (arregloAtr[0].ToString() == "AC")
-                                        {
-                                            atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+                                    }
+                                    if (arregloAtr[0].ToString() == "AC")
+                                    {
+                                        atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
 
-                                        }
-                                        if (arregloAtr[0].ToString() == "VI")
-                                        {
-                                            atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+                                    }
+                                    if (arregloAtr[0].ToString() == "VI")
+                                    {
+                                        atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
 
-                                        }
-                                 
+                                    }
+
 
                                     linea = file.ReadLine();
 
@@ -101,18 +101,28 @@ namespace ParqueDiversiones
                             break;
 
                         case 5:
-                            
+                            Console.WriteLine("¿Qué atracción desea consultar su información?");
+                            Console.WriteLine();
+                            ListarAtracciones(atracciones);
+                            int atraccionSeleccionada = int.Parse(Console.ReadLine()) - 1;
+                            ConsutarInfoAtraccion(atracciones[atraccionSeleccionada]);
                             break;
 
                         case 6:
-                            //ConsutarInfoAtraccion();
+                            ConsultarInfoUsuarios(personas);
                             break;
 
                         case 7:
-                            //ConsultarInfoPersona();
+                            ConsultarInfoEmpleados(personas);
                             break;
 
                         case 8:
+                            Console.WriteLine("Escoja la atracción que quiere asignar al empleado: ");
+                            ListarAtracciones(atracciones);
+                            int atrSeleccionada = int.Parse(Console.ReadLine());
+
+                            break;
+                        case 9:
                             ListarAtracciones(atracciones);
                             break;
                     }
@@ -135,9 +145,10 @@ namespace ParqueDiversiones
             Console.WriteLine("[3] Registrar usuario");
             Console.WriteLine("[4] Registrar atracción");
             Console.WriteLine("[5] Consultar información atracción");
-            Console.WriteLine("[6] Consultar información persona");   
-            Console.WriteLine("[7] Asignar atracción a un empleado");
-            Console.WriteLine("[8] Listar atracciones");
+            Console.WriteLine("[6] Consultar información usuarios");
+            Console.WriteLine("[7] Consultar información empleados");
+            Console.WriteLine("[8] Asignar atracción a un empleado");
+            Console.WriteLine("[9] Listar atracciones");
             Console.WriteLine("[0] Salir");
             Console.WriteLine("=========================================");
         }
@@ -168,7 +179,7 @@ namespace ParqueDiversiones
             {
                 foreach (var item in atracciones)
                 {
-                    Console.WriteLine(atracciones.IndexOf(item) + 1 + " )" + " Código: " + item.Codigo + " \n Nombre: " + item.Nombre + " \n Límite de Edad:" + item.Limite_de_edad + " \n Límite de Estatura:" + item.Limite_de_estatura + " \n Costo:" + item.Costo + "\n  Descripción:" + item.Descripcion);
+                    Console.WriteLine(atracciones.IndexOf(item) + 1 + " )" + "|Tipo: " + item.GetType().Name+ "| Código: " + item.Codigo + "  |Nombre: " + item.Nombre +"| Costo: " +item.Costo) ;
                     Console.WriteLine();
                 }
             }
@@ -176,14 +187,48 @@ namespace ParqueDiversiones
         
         static void ConsutarInfoAtraccion(Atraccion atraccion)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nTipo: " + atraccion.GetType().Name + "\nCódigo: " + atraccion.Codigo + "\nNombre: " + atraccion.Nombre+ "\nCosto: " + atraccion.Costo+ "\nLimite de edad: " + atraccion.Limite_de_edad + "\nLimite estatura:" + atraccion.Limite_de_estatura + "\nDescripcion general:" + atraccion.Descripcion + "\nEstado:" + atraccion.ConsultarEstado());
+            Console.WriteLine();
+        }
+
+        static void ConsultarInfoUsuarios(List<Persona> personas)
+        {
+            int contadorUsuarios = default;
+            foreach (var usuario in personas)
+            {
+                    var item = usuario as Usuario;
+                    if (item != null)
+                    {
+                    Console.WriteLine(personas.IndexOf(usuario) + 1 + " )" + "| Tipo: " + item.GetType().Name + "  | Nombre: " + item.Nombre + "| Documento: " + item.DocID + "| Edad: " + item.Edad + "| Estaura:" + item.Estatura);
+                    contadorUsuarios++;
+                    }
+            }
+            if (contadorUsuarios == 0)
+            {
+                throw new Exception("No hay usuarios inscritos");
+            }
             
         }
-
-        static void ConsultarInfoPersona(Persona persona)
+       static void  ConsultarInfoEmpleados(List<Persona> personas)
         {
-
+            int contadorEmpleados = default;
+            foreach (var item in personas)
+            {
+                var empleado = item as Empleado;
+                if (item != null)
+                {
+                    Console.WriteLine(personas.IndexOf(item) + 1 + " )" + "| Tipo: " + item.GetType().Name + "  | Nombre: " + empleado.Nombre + "| Documento: " + empleado.DocID + "| Edad: " + item.Edad + "| Atraccion asignada :" + empleado.Encargado.Nombre);
+                    contadorEmpleados++;
+                }
+            }
+            if (contadorEmpleados == 0)
+            {
+                throw new Exception("No hay empleados inscritos");
+            }
         }
-         static DateTime SolicitarFecha()
+
+        static DateTime SolicitarFecha()
         {
             string[] fecha = new string[2];
             int[] fechaInt = new int[2];
