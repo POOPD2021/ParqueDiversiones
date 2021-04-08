@@ -87,17 +87,19 @@ namespace ParqueDiversiones
                             break;
 
                         case 8:
+                            //Pregunta la atraccion a la que le quiere asignar el empleado
                             Console.WriteLine("Escoja la atracción que quiere asignar al empleado: ");
                             ListarAtracciones(atracciones);
                             int atrSeleccionada = int.Parse(Console.ReadLine()) - 1;
-
+                            //Organiza la lista de personas separando usuarios y empleados 
                             personas.Sort((s1, s2) => s1.GetType().Name.CompareTo(s2.GetType().Name));
                             Console.WriteLine("Escoja el empleado a asignar la atracción ");
 
+                            //llama  la lista de empleados
                             ConsultarInfoEmpleados(personas);
                             int emplSeleccionado = int.Parse(Console.ReadLine()) - 1;
-                            Empleado empleado=  personas[emplSeleccionado] as Empleado;
-                            empleado.AsignarAtraccion(atracciones[atrSeleccionada]);
+                            Empleado empleado=  personas[emplSeleccionado] as Empleado; //Convierte la persona en empleado para poder acceder a su metodo
+                            empleado.AsignarAtraccion(atracciones[atrSeleccionada]);//Le asigna la atracción
                             Console.WriteLine("Atraccion asignada con éxito");
 
                             break;
@@ -180,8 +182,8 @@ namespace ParqueDiversiones
             int contadorUsuarios = default;
             foreach (var item in personas)
             {
-                    var usuario = item as Usuario; //Permite consultar las propiedades del usuario
-                    if (usuario != null)
+                    var usuario = item as Usuario; //Permite consultar las propiedades del usuario conviertiendo el objecto persona en usuario
+                    if (usuario != null) //si hay un usuario en la lista de personas
                     {
                     Console.WriteLine(contadorUsuarios + 1 + " )" + "| Tipo: " + usuario.GetType().Name + "  | Nombre: " + usuario.Nombre + "| Documento: " + usuario.DocID + "| Edad: " + usuario.Edad + "| Estaura:" + usuario.Estatura);
                     contadorUsuarios++;
@@ -198,8 +200,8 @@ namespace ParqueDiversiones
             int contadorEmpleados = default;
             foreach (var item in personas)
             {
-                var empleado = item as Empleado;//Permite consultar las propiedades del empleado
-                if (empleado != null)
+                var empleado = item as Empleado;//Permite consultar las propiedades del empleado conviertiendo el objecto persona en empleado
+                if (empleado != null)//si hay un empleado en la lista de personas
                 {
                     Console.WriteLine(contadorEmpleados + 1 + " )" + "| Tipo: " + empleado.GetType().Name + "  | Nombre: " + empleado.Nombre + "| Documento: " + empleado.DocID + "| Edad: " + empleado.Edad + "| Atraccion encargada: " + empleado.ConsultarInfoAtraccion());
                     contadorEmpleados++;
