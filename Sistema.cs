@@ -13,7 +13,7 @@ namespace ParqueDiversiones
             List<Persona> personas = new List<Persona>();
             List<Atraccion> atracciones = new List<Atraccion>();
             List<ReporteCostos> reporteCostos = new List<ReporteCostos>();
-
+            ActualizarInfoAtr(atracciones); //Asegura que la informacion acerca de las atracciones se va actualizar cada que se inicie el programa
             int opcion = default;
             do
             {
@@ -29,6 +29,7 @@ namespace ParqueDiversiones
                             break;
 
                         case 2:
+                            //Registrar una persona general y pregunta si es usuario o empleado
                             Console.WriteLine("¿Usuario o empleado? [1] o [2]");
                             int tipoPersona = int.Parse(Console.ReadLine());
                             Console.WriteLine("Por favor, ingrese su nombre");
@@ -64,6 +65,7 @@ namespace ParqueDiversiones
                             break;
 
                         case 4:
+
                             ActualizarInfoAtr(atracciones);
                             //RegistrarAtraccion();
                             break;
@@ -178,7 +180,7 @@ namespace ParqueDiversiones
             int contadorUsuarios = default;
             foreach (var item in personas)
             {
-                    var usuario = item as Usuario;
+                    var usuario = item as Usuario; //Permite consultar las propiedades del usuario
                     if (usuario != null)
                     {
                     Console.WriteLine(contadorUsuarios + 1 + " )" + "| Tipo: " + usuario.GetType().Name + "  | Nombre: " + usuario.Nombre + "| Documento: " + usuario.DocID + "| Edad: " + usuario.Edad + "| Estaura:" + usuario.Estatura);
@@ -196,7 +198,7 @@ namespace ParqueDiversiones
             int contadorEmpleados = default;
             foreach (var item in personas)
             {
-                var empleado = item as Empleado;
+                var empleado = item as Empleado;//Permite consultar las propiedades del empleado
                 if (empleado != null)
                 {
                     Console.WriteLine(contadorEmpleados + 1 + " )" + "| Tipo: " + empleado.GetType().Name + "  | Nombre: " + empleado.Nombre + "| Documento: " + empleado.DocID + "| Edad: " + empleado.Edad + "| Atraccion encargada: " + empleado.ConsultarInfoAtraccion());
@@ -208,7 +210,10 @@ namespace ParqueDiversiones
                 throw new Exception("No hay empleados inscritos");
             }
         }
-
+        /// <summary>
+        /// Pregunta la fecha en el formata Año/mes/dia, los cuarda en un arreglo y crea un datetime
+        /// </summary>
+        /// <Datetime></returns>
         static DateTime SolicitarFecha()
         {
             string[] fecha = new string[2];
@@ -227,6 +232,10 @@ namespace ParqueDiversiones
 
             return fechaNacimiento;
         }
+        /// <summary>
+        /// Abre el archivo de texto y lee las atracciones que están escritas
+        /// </summary>
+        /// <param name="atracciones"></param>
         static void ActualizarInfoAtr(List<Atraccion> atracciones)
         {
             string path = "Atracciones_PD.txt";
