@@ -9,7 +9,7 @@ namespace ParqueDiversiones
     class Ingreso
     {
         private DateTime fechaIngreso;
-        private float descuento;
+        private double descuento;
         private double costo;
         private Atraccion atraccion;
 
@@ -22,7 +22,7 @@ namespace ParqueDiversiones
         }
 
         public DateTime FechaIngreso { get => fechaIngreso; }
-        public float Descuento { get => descuento; }
+        public double Descuento { get => descuento; }
         public double Costo { get => costo;}
         public Atraccion Atraccion { get => atraccion; }
     }

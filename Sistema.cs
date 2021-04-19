@@ -65,7 +65,27 @@ namespace ParqueDiversiones
 
                         case 4:
 
-                            //RegistrarAtraccion();
+                            Console.WriteLine("¿Qué tipo de atracción es? 1. Mecánica/ 2. Acuática / 3. Virtual");
+                            int tipoAtraccion = int.Parse(Console.ReadLine());
+                            if (tipoAtraccion != 1 && tipoAtraccion != 2 && tipoAtraccion != 3)
+                            {
+                                Console.WriteLine("Ha ocurrido un error. Vuelva a intentarlo.");
+                                return;
+                            }
+                            Console.WriteLine("Por favor, ingrese el código");
+                            string codigoA = Console.ReadLine();
+                            Console.WriteLine("Por favor, ingrese el nombre");
+                            string nombreA = Console.ReadLine();
+                            Console.WriteLine("Por favor, ingrese el límite de edad");
+                            int limite_de_edadA = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Por favor, ingrese el límite de estatura");
+                            double limite_de_estaturaA = double.Parse(Console.ReadLine());
+                            Console.WriteLine("Por favor, ingrese el costo");
+                            double costoA = double.Parse(Console.ReadLine());
+                            Console.WriteLine("Por favor, ingrese una descripción de la atracción");
+                            string descripcionA = Console.ReadLine();
+
+                            RegistrarAtraccion(tipoAtraccion, codigoA, nombreA, limite_de_edadA, limite_de_estaturaA, costoA, descripcionA, atracciones);
                             break;
 
                         case 5:
@@ -143,8 +163,8 @@ namespace ParqueDiversiones
             Console.WriteLine("[1] Generar reporte");//falta Stefa
             Console.WriteLine("[2] Registrar persona");
             Console.WriteLine("[3] Recargar manilla");//falta  Pablo
-            Console.WriteLine("[4] Registrar atracción");//Falta Andres
-            Console.WriteLine("[5] Consultar información atracción");//falta poner la descripcion
+            Console.WriteLine("[4] Registrar atracción");//listo
+            Console.WriteLine("[5] Consultar información atracción");//listo
             Console.WriteLine("[6] Consultar información usuarios");//listo
             Console.WriteLine("[7] Consultar información empleados");//listo
             Console.WriteLine("[8] Asignar atracción a un empleado");
@@ -159,9 +179,38 @@ namespace ParqueDiversiones
 
         }
 
-        static void RegistrarAtraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, bool operando, List<Atraccion> atracciones)
+        static void RegistrarAtraccion(int tipoAtraccion, string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, List<Atraccion> atracciones)
         {
+            if (tipoAtraccion == 1)
+            {
+                atracciones.Add(new Mecanica("MC" + codigo, nombre, limite_de_edad, limite_de_estatura, costo, descripcion));
+                Console.WriteLine("Se ha registrado una atracción mecánica con éxito.");
 
+                using (StreamWriter sw = File.AppendText("Atracciones_PD.txt"))
+                {
+                    sw.WriteLine("MC" + "|" + codigo + "|" + nombre + "|" + limite_de_edad + "|" + limite_de_estatura + "|" + costo + "|" + descripcion);
+                }
+            }
+            else if (tipoAtraccion == 2)
+            {
+                atracciones.Add(new Acuatica("AC" + codigo, nombre, limite_de_edad, limite_de_estatura, costo, descripcion));
+                Console.WriteLine("Se ha registrado una atracción acuática con éxito.");
+
+                using (StreamWriter sw = File.AppendText("Atracciones_PD.txt"))
+                {
+                    sw.WriteLine("AC" + "|" + codigo + "|" + nombre + "|" + limite_de_edad + "|" + limite_de_estatura + "|" + costo + "|" + descripcion);
+                }
+            }
+            else if (tipoAtraccion == 3)
+            {
+                atracciones.Add(new Virtual("VI" + codigo, nombre, limite_de_edad, limite_de_estatura, costo, descripcion));
+                Console.WriteLine("Se ha registrado una atracción virtual con éxito.");
+
+                using (StreamWriter sw = File.AppendText("Atracciones_PD.txt"))
+                {
+                    sw.WriteLine("VI" + "|" + codigo + "|" + nombre + "|" + limite_de_edad + "|" + limite_de_estatura + "|" + costo + "|" + descripcion);
+                }
+            }
         }
 
         static void ListarAtracciones(List<Atraccion> atracciones)
@@ -251,35 +300,36 @@ namespace ParqueDiversiones
         static void ActualizarInfoAtr(List<Atraccion> atracciones)
         {
             string path = "Atracciones_PD.txt";
-            
             string linea = "";
             string[] arregloAtr;
-            StreamReader file = new StreamReader(path);
-            linea = file.ReadLine();
-
-            while (linea != null)
+            using (StreamReader file = new StreamReader(path))
             {
-                arregloAtr = linea.Split('|');
-
-                if (arregloAtr[0].ToString() == "MC")
-                {
-                    atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
-
-                }
-                if (arregloAtr[0].ToString() == "AC")
-                {
-                    atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
-
-                }
-                if (arregloAtr[0].ToString() == "VI")
-                {
-                    atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
-
-                }
-
-
                 linea = file.ReadLine();
 
+                while (linea != null)
+                {
+                    arregloAtr = linea.Split('|');
+
+                    if (arregloAtr[0].ToString() == "MC")
+                    {
+                        atracciones.Add(new Mecanica("MC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
+                    }
+                    if (arregloAtr[0].ToString() == "AC")
+                    {
+                        atracciones.Add(new Acuatica("AC" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
+                    }
+                    if (arregloAtr[0].ToString() == "VI")
+                    {
+                        atracciones.Add(new Virtual("VI" + arregloAtr[1], arregloAtr[2], int.Parse(arregloAtr[3]), double.Parse(arregloAtr[4]), double.Parse(arregloAtr[5]), arregloAtr[6]));
+
+                    }
+
+
+                    linea = file.ReadLine();
+
+                }
             }
         }
 
