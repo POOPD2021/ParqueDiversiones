@@ -10,6 +10,7 @@ namespace ParqueDiversiones
     {
         private Manilla dueño;
         private Double estatura;
+       
 
         public Usuario(string nombre, DateTime fechaNacimiento, long docID, Double estatura) : base(nombre, fechaNacimiento, docID)
         { 

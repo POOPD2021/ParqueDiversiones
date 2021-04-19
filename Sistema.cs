@@ -41,17 +41,16 @@ namespace ParqueDiversiones
 
                             if (tipoPersona == 1)
                             {
-                              
+
                                 Console.WriteLine("Por favor, ingrese su estatura");
                                 double estatura = double.Parse(Console.ReadLine());
-
-                                RegistrarUsuario(nombre, docID, fechaNacimiento, estatura, personas);
-
+                                personas.Add(new Usuario(nombre, fechaNacimiento, docID, estatura));
                                 Console.WriteLine("Se ha registrado el usuario con éxito y se le ha asignado una manilla con un saldo de $0");
                             }
                             else if (tipoPersona == 2)
                             {
-                                RegistrarEmpleado(nombre, docID, fechaNacimiento, personas);
+                                personas.Add(new Empleado(nombre, fechaNacimiento, docID));
+
                                 Console.WriteLine("Se ha registrado un empleado con éxito");
 
                             }
@@ -71,8 +70,7 @@ namespace ParqueDiversiones
                             break;
 
                         case 5:
-                            Console.WriteLine("¿Qué atracción desea consultar su información?");
-                            Console.WriteLine();
+                          
                             ListarAtracciones(atracciones);
                             int atraccionSeleccionada = int.Parse(Console.ReadLine()) - 1;
                             ConsutarInfoAtraccion(atracciones[atraccionSeleccionada]);
@@ -86,7 +84,7 @@ namespace ParqueDiversiones
                             ConsultarInfoEmpleados(personas);
                             break;
 
-                        case 8:
+                        case 8: 
                             //Pregunta la atraccion a la que le quiere asignar el empleado
                             Console.WriteLine("Escoja la atracción que quiere asignar al empleado: ");
                             ListarAtracciones(atracciones);
@@ -121,15 +119,16 @@ namespace ParqueDiversiones
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("");
             Console.WriteLine("==[Menu]=================================");
-            Console.WriteLine("[1] Generar reporte");
+            Console.WriteLine("[1] Generar reporte");//falta Stefa
             Console.WriteLine("[2] Registrar persona");
-            Console.WriteLine("[3] Recargar manilla");
-            Console.WriteLine("[4] Registrar atracción");
-            Console.WriteLine("[5] Consultar información atracción");
-            Console.WriteLine("[6] Consultar información usuarios");
-            Console.WriteLine("[7] Consultar información empleados");
+            Console.WriteLine("[3] Recargar manilla");//falta  Pablo
+            Console.WriteLine("[4] Registrar atracción");//Falta Andres
+            Console.WriteLine("[5] Consultar información atracción");//falta poner la descripcion
+            Console.WriteLine("[6] Consultar información usuarios");//listo
+            Console.WriteLine("[7] Consultar información empleados");//listo
             Console.WriteLine("[8] Asignar atracción a un empleado");
-            Console.WriteLine("[9] Listar atracciones");
+            Console.WriteLine("[9] Listar atracciones");//ya
+            Console.WriteLine("[10] Ingresar a atracción");//falta Samuel
             Console.WriteLine("[0] Salir");
             Console.WriteLine("=========================================");
         }
@@ -137,16 +136,6 @@ namespace ParqueDiversiones
         static void GenerarReporte()
         {
 
-        }
-       
-        static void RegistrarEmpleado(string nombre, long docID, DateTime fechaNacimiento, List<Persona> personas)
-        {
-            personas.Add(new Empleado(nombre, fechaNacimiento, docID));
-        }
-
-        static void RegistrarUsuario(string nombre, long docID, DateTime fechaNacimiento, double estatura, List<Persona> personas)
-        {
-            personas.Add(new Usuario(nombre, fechaNacimiento, docID, estatura));
         }
 
         static void RegistrarAtraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, bool operando, List<Atraccion> atracciones)
@@ -182,7 +171,7 @@ namespace ParqueDiversiones
             int contadorUsuarios = default;
             foreach (var item in personas)
             {
-                    var usuario = item as Usuario; //Permite consultar las propiedades del usuario conviertiendo el objecto persona en usuario
+                    Usuario usuario = item as Usuario; //Permite consultar las propiedades del usuario conviertiendo el objecto persona en usuario
                     if (usuario != null) //si hay un usuario en la lista de personas
                     {
                     Console.WriteLine(contadorUsuarios + 1 + " )" + "| Tipo: " + usuario.GetType().Name + "  | Nombre: " + usuario.Nombre + "| Documento: " + usuario.DocID + "| Edad: " + usuario.Edad + "| Estaura:" + usuario.Estatura);
@@ -200,7 +189,7 @@ namespace ParqueDiversiones
             int contadorEmpleados = default;
             foreach (var item in personas)
             {
-                var empleado = item as Empleado;//Permite consultar las propiedades del empleado conviertiendo el objecto persona en empleado
+                Empleado empleado = item as Empleado;//Permite consultar las propiedades del empleado conviertiendo el objecto persona en empleado
                 if (empleado != null)//si hay un empleado en la lista de personas
                 {
                     Console.WriteLine(contadorEmpleados + 1 + " )" + "| Tipo: " + empleado.GetType().Name + "  | Nombre: " + empleado.Nombre + "| Documento: " + empleado.DocID + "| Edad: " + empleado.Edad + "| Atraccion encargada: " + empleado.ConsultarInfoAtraccion());
@@ -242,10 +231,12 @@ namespace ParqueDiversiones
             /// </summary>
             /// <param name="atracciones"></param>
             string path = "Atracciones_PD.txt";
+            
             string linea = "";
             string[] arregloAtr;
             StreamReader file = new StreamReader(path);
             linea = file.ReadLine();
+
             while (linea != null)
             {
                 arregloAtr = linea.Split('|');
