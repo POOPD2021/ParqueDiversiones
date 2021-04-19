@@ -234,12 +234,13 @@ namespace ParqueDiversiones
 
             return fechaNacimiento;
         }
-        /// <summary>
-        /// Abre el archivo de texto y lee las atracciones que están escritas
-        /// </summary>
-        /// <param name="atracciones"></param>
+        
         static void ActualizarInfoAtr(List<Atraccion> atracciones)
         {
+            /// <summary>
+            /// Abre el archivo de texto y lee las atracciones que están escritas
+            /// </summary>
+            /// <param name="atracciones"></param>
             string path = "Atracciones_PD.txt";
             string linea = "";
             string[] arregloAtr;
