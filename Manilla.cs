@@ -28,9 +28,16 @@ namespace ParqueDiversiones
             Console.WriteLine("Ingresando a la atracción");
         }
 
-        public void RecargarManilla(double recargar)
+        public void RecargarManilla(double monto)
         {
-
+            if (monto >0)
+            {
+                saldo += monto;
+            }
+            else
+            {
+                throw new Exception("El valor ingresado debe ser positivo");
+            }
         }
     }
     

@@ -42,7 +42,7 @@ namespace ParqueDiversiones
                             if (tipoPersona == 1)
                             {
 
-                                Console.WriteLine("Por favor, ingrese su estatura");
+                                Console.WriteLine("Por favor, ingrese su estatura (En cm. Sin puntos ni comas)");
                                 double estatura = double.Parse(Console.ReadLine());
                                 personas.Add(new Usuario(nombre, fechaNacimiento, docID, estatura));
                                 Console.WriteLine("Se ha registrado el usuario con éxito y se le ha asignado una manilla con un saldo de $0");
@@ -59,8 +59,16 @@ namespace ParqueDiversiones
                             break;
 
                         case 3:
-                           
-                           
+                            personas.Sort((s1, s2) => s1.GetType().Name.CompareTo(s2.GetType().Name));
+                            personas.Reverse();
+                            Console.WriteLine("Escoja a cuál usuario desea recargar la manilla:");
+                            ConsultarInfoUsuarios(personas);
+                            int usuarioEscogido = int.Parse(Console.ReadLine())-1;
+                            Console.WriteLine("¿Cuánto dinero desea recargar?");
+                            double saldoRecarga = double.Parse(Console.ReadLine());
+                            Usuario usuario = personas[usuarioEscogido] as Usuario;
+                            usuario.Dueño.RecargarManilla(saldoRecarga);
+                            Console.WriteLine("Se ha recargado con éxito!");
                             break;
 
                         case 4:
@@ -129,19 +137,19 @@ namespace ParqueDiversiones
                             ConsultarInfoUsuarios(personas);
 
                             Console.WriteLine("Escoja el usuario para ingresar a la atracción: ");
-                            int usuarioEscogido = int.Parse(Console.ReadLine())-1;
+                            int usrEscogido = int.Parse(Console.ReadLine())-1;
                             ListarAtracciones(atracciones);
                             Console.WriteLine("Escoja la atracción");
                             int atraccion = int.Parse(Console.ReadLine())-1;
 
-                            Usuario usuario = personas[usuarioEscogido] as Usuario;
+                            Usuario usr = personas[usrEscogido] as Usuario;
                             
                             double descuentos = atracciones[atraccion].Descuentos;
-                            double costo = atracciones[atraccion].CalcularCosto(usuario);
-                            bool ingreso =atracciones[atraccion].Ingresar(usuario);
+                            double costo = atracciones[atraccion].CalcularCosto(usr);
+                            bool ingreso =atracciones[atraccion].Ingresar(usr);
                             if (ingreso)
                             {
-                                usuario.Dueño.EntrarAtraccion(atracciones[atraccion],costo, descuentos);
+                                usr.Dueño.EntrarAtraccion(atracciones[atraccion],costo, descuentos);
                             }
 
                             break;
@@ -244,7 +252,7 @@ namespace ParqueDiversiones
                     Usuario usuario = item as Usuario; //Permite consultar las propiedades del usuario conviertiendo el objecto persona en usuario
                     if (usuario != null) //si hay un usuario en la lista de personas
                     {
-                    Console.WriteLine(contadorUsuarios + 1 + " )" + "| Tipo: " + usuario.GetType().Name + "  | Nombre: " + usuario.Nombre + "| Documento: " + usuario.DocID + "| Edad: " + usuario.Edad + "| Estaura:" + usuario.Estatura);
+                    Console.WriteLine(contadorUsuarios + 1 + " )" + "| Tipo: " + usuario.GetType().Name + "  | Nombre: " + usuario.Nombre + "| Saldo: " + usuario.Dueño.Saldo +  "| Documento: " + usuario.DocID + "| Edad: " + usuario.Edad + "| Estaura:" + usuario.Estatura);
                     contadorUsuarios++;
                     }
             }
