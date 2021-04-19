@@ -103,6 +103,28 @@ namespace ParqueDiversiones
                         case 9:
                             ListarAtracciones(atracciones);
                             break;
+                        case 10:
+                            personas.Sort((s1, s2) => s1.GetType().Name.CompareTo(s2.GetType().Name));
+                            personas.Reverse();
+                            ConsultarInfoUsuarios(personas);
+
+                            Console.WriteLine("Escoja el usuario para ingresar a la atracción: ");
+                            int usuarioEscogido = int.Parse(Console.ReadLine())-1;
+                            ListarAtracciones(atracciones);
+                            Console.WriteLine("Escoja la atracción");
+                            int atraccion = int.Parse(Console.ReadLine())-1;
+
+                            Usuario usuario = personas[usuarioEscogido] as Usuario;
+                            
+                            double descuentos = atracciones[atraccion].Descuentos;
+                            double costo = atracciones[atraccion].CalcularCosto(usuario);
+                            bool ingreso =atracciones[atraccion].Ingresar(usuario);
+                            if (ingreso)
+                            {
+                                usuario.Dueño.EntrarAtraccion(atracciones[atraccion],costo, descuentos);
+                            }
+
+                            break;
                     }
                 }
                 catch (Exception e)

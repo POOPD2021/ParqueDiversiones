@@ -15,6 +15,7 @@ namespace ParqueDiversiones
         protected double costo;
         protected string descripcion;
         protected bool operando;
+        protected double descuentos;
 
         public string Codigo { get => codigo; }
         public string Nombre { get => nombre; }
@@ -22,7 +23,8 @@ namespace ParqueDiversiones
         public double Limite_de_estatura { get => limite_de_estatura; }
         public double Costo { get => costo; }
         public string Descripcion { get => descripcion; }
-        protected bool Operando { get => operando; set => operando = value; }
+        public bool Operando { get => operando; set => operando = value; }
+        public double Descuentos { get => descuentos; }
 
         public Atraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion)
         {
@@ -35,15 +37,23 @@ namespace ParqueDiversiones
             Operando = false;
         }
 
-        public bool Ingresar()
+     
+        public bool Ingresar(Usuario usuario)
         {
-            return true;
+          if(usuario.Estatura>=limite_de_estatura && usuario.Edad >= Limite_de_estatura&&usuario.Dueño.Saldo>costo)
+            {
+                return true;
+            }
+
+          else
+            {
+                throw new Exception("No cumple con los requisitos");
+
+            }
         }
 
-        protected virtual void CalcularCosto()
-        {
-
-        }
+        public abstract double  CalcularCosto(Usuario usuario);
+       
         public string ConsultarEstado()
         {
             if (operando)

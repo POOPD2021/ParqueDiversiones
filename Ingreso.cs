@@ -13,7 +13,7 @@ namespace ParqueDiversiones
         private double costo;
         private Atraccion atraccion;
 
-        public Ingreso(DateTime fechaIngreso, float descuento, double costo, Atraccion atraccion)
+        public Ingreso(DateTime fechaIngreso, double descuento, double costo, Atraccion atraccion)
         {
             this.fechaIngreso = fechaIngreso;
             this.descuento = descuento;

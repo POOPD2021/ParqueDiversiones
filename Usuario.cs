@@ -20,7 +20,7 @@ namespace ParqueDiversiones
 
         public double Estatura { get => estatura; }
         internal Manilla Dueño { get => dueño; }
-
+       
         public void GenerarManilla()
         {
             dueño = new Manilla();

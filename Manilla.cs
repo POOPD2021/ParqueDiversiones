@@ -17,11 +17,15 @@ namespace ParqueDiversiones
         }
 
         public double Saldo { get => saldo; }
-        internal List<Ingreso> IngresosAtracciones { get => ingresosAtracciones; }
+        public List<Ingreso> IngresosAtracciones { get => ingresosAtracciones; }
 
-        public void EntrarAtraccion(Atraccion atraccion)
+        public void EntrarAtraccion(Atraccion atraccion,double costo, double descuentos)
         {
-
+            saldo -= costo;
+            DateTime fechaIngreso = DateTime.Now;
+            Ingreso nuevoIngreso = new Ingreso(fechaIngreso,descuentos, costo,atraccion);
+            ingresosAtracciones.Add(nuevoIngreso);
+            Console.WriteLine("Ingresando a la atracción");
         }
 
         public void RecargarManilla(double recargar)
