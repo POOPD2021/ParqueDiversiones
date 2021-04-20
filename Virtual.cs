@@ -15,6 +15,8 @@ namespace ParqueDiversiones
         public override double CalcularCosto(Usuario usuario)
         {
             int contador = 0;
+            double costoCalculado = costo;
+          
             foreach (var item in usuario.Dueño.IngresosAtracciones)
             {
                 string tipo = item.Atraccion.GetType().Name;
@@ -23,11 +25,25 @@ namespace ParqueDiversiones
                     contador++;
                 }
             }
-            if (contador >= 2)
+            if (contador > 2)
             {
-                costo += costo * 0.05;
+                descuentos = costo * 0.05;
+                costoCalculado += costo * 0.05;
             }
-            return costo;
+            return costoCalculado;
+        }
+        public override bool Ingresar(Usuario usuario)
+        {
+            if (usuario.Estatura >= limite_de_estatura && usuario.Edad >= limite_de_edad && usuario.Dueño.Saldo > costo + descuentos)
+            {
+                return true;
+            }
+
+            else
+            {
+                throw new Exception("No cumple con los requisitos");
+
+            }
         }
 
     }

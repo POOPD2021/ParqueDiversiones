@@ -38,9 +38,9 @@ namespace ParqueDiversiones
         }
 
      
-        public bool Ingresar(Usuario usuario)
+        public virtual bool Ingresar(Usuario usuario)
         {
-          if(usuario.Estatura>=limite_de_estatura && usuario.Edad >= Limite_de_estatura&&usuario.Dueño.Saldo>costo)
+          if(usuario.Estatura>=limite_de_estatura && usuario.Edad >= limite_de_edad && usuario.Dueño.Saldo>=costo-descuentos)
             {
                 return true;
             }

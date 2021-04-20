@@ -15,23 +15,24 @@ namespace ParqueDiversiones
 
         public override double CalcularCosto(Usuario usuario)
         {
-            bool variosIngresos= false;
-            string atrAnterior = "";
+
+            int contador = 0;
+            double costoCalculado = costo;
             usuario.Dueño.IngresosAtracciones.Sort((s1, s2) => s1.Atraccion.Nombre.CompareTo(s2.Atraccion.Nombre));
             foreach (var item in usuario.Dueño.IngresosAtracciones)
             {
-                if (item.Atraccion.Nombre.ToUpper() == atrAnterior.ToUpper()) 
+                if (item.Atraccion.Nombre.ToUpper() == nombre.ToUpper()) 
                 {
-                    atrAnterior = item.Atraccion.Nombre;
-
-                    variosIngresos = true;
+                    contador++;
+                 
                 }
             }
-            if (variosIngresos)
+            if (contador>=2)
             {
-                costo -= costo * 0.08;
+                descuentos = costo * 0.08;
+                costoCalculado -= descuentos;
             }
-            return costo;
+            return costoCalculado;
         }
     }
 }

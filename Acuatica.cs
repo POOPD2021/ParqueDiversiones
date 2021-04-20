@@ -15,12 +15,13 @@ namespace ParqueDiversiones
 
         public override double CalcularCosto(Usuario usuario)
         {
-            if(usuario.Edad>=45&& usuario.Edad <= 50)
+            double costoCalculado = costo;
+            if (usuario.Edad>=45&& usuario.Edad <= 50)
             {
                 descuentos = costo * 0.07;
-                costo -= descuentos;
+                costoCalculado -= descuentos;
             }
-            return costo;
+            return costoCalculado;
         }
 
        
