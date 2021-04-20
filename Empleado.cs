@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class Empleado : Persona
+    public class Empleado : Persona
     {
         private Atraccion encargado;
         public Empleado (string nombre, DateTime fechaNacimiento, long docID): base (nombre,fechaNacimiento,docID)

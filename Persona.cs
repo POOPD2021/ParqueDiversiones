@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class Persona
+    public class Persona
     {
         private string nombre;
         private long docID;

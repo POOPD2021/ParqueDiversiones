@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class Usuario : Persona
+    public class Usuario : Persona
     {
         private Manilla dueño;
         private Double estatura;

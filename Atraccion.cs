@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    abstract class Atraccion
+    public abstract class Atraccion
     {
         protected string codigo;
         protected string nombre;
@@ -24,7 +24,6 @@ namespace ParqueDiversiones
         public double Costo { get => costo; }
         public string Descripcion { get => descripcion; }
         public bool Operando { get => operando; set => operando = value; }
-        public double Descuentos { get => descuentos; }
 
         public Atraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion)
         {
@@ -42,6 +41,8 @@ namespace ParqueDiversiones
         {
           if(usuario.Estatura>=limite_de_estatura && usuario.Edad >= limite_de_edad && usuario.Dueño.Saldo>=costo-descuentos)
             {
+
+                usuario.Dueño.EntrarAtraccion(this, CalcularCosto(usuario), descuentos);
                 return true;
             }
 
