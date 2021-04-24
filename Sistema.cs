@@ -28,7 +28,7 @@ namespace ParqueDiversiones
                     {
 
                         case 1:
-                            GenerarReporte();
+                            GenerarReporte(personas, atracciones);
                             break;
 
                         case 2:
@@ -181,9 +181,13 @@ namespace ParqueDiversiones
             Console.WriteLine("=========================================");
         }
 
-        static void GenerarReporte()
+        static void GenerarReporte(List<Persona> personas, List<Atraccion> atracciones)
         {
-
+            ReporteCostos rc = new ReporteCostos(personas, DateTime.Now, atracciones);
+            Console.WriteLine(rc.NroIngresosDia);
+            Console.WriteLine(rc.IngresosDiaAtraccion);
+            Console.WriteLine(rc.CostosDiaAtraccion);
+            Console.WriteLine(rc.CostosDiaTotales);
         }
 
        

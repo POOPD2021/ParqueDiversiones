@@ -10,15 +10,17 @@ namespace ParqueDiversiones
     {
         private Manilla dueño;
         private Double estatura;
-       
+        private DateTime fechaIngresoParque;
 
         public Usuario(string nombre, DateTime fechaNacimiento, long docID, Double estatura) : base(nombre, fechaNacimiento, docID)
         { 
             this.estatura = estatura;
             GenerarManilla();
+            DateTime fechaIngresoParque = DateTime.Now;
         }
 
         public double Estatura { get => estatura; }
+        public DateTime FechaIngresoParque { get => fechaIngresoParque;}
         internal Manilla Dueño { get => dueño; }
        
         public void GenerarManilla()

@@ -8,25 +8,106 @@ namespace ParqueDiversiones
 {
     class ReporteCostos
     {
-        private double nroIngresosDia;
+        private int nroIngresosDia;
         private double ingresosDiaAtraccion;
         private double costosDiaAtraccion;
         private double costosDiaTotales;
         private DateTime fecha;
 
-        public ReporteCostos(double nroIngresosDia, double ingresosDiaAtraccion, double costosDiaAtraccion, double costosDiaTotales, DateTime fecha)
+        public ReporteCostos(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
         {
-            this.nroIngresosDia = nroIngresosDia;
-            this.ingresosDiaAtraccion = ingresosDiaAtraccion;
-            this.costosDiaAtraccion = costosDiaAtraccion;
-            this.costosDiaTotales = costosDiaTotales;
-            this.fecha = fecha;
+            
+            this.ingresosDiaAtraccion = 0;
+            this.costosDiaAtraccion = 0;
+            this.costosDiaTotales = 0;
+            this.fecha = DateTime.Now;
+
+            CalcularNroIngresosDias(personas, fechaReporte);
+            CalcularIngresosAtracciones(personas, fechaReporte, atracciones);
+            CalcularCostoAtracciones(personas, fechaReporte, atracciones);
+            CalcularCostoDias(personas, fechaReporte, atracciones);
+
         }
 
-        public double NroIngresosDia { get => nroIngresosDia;}
+        public int NroIngresosDia { get => nroIngresosDia;}
         public double IngresosDiaAtraccion { get => ingresosDiaAtraccion;}
         public double CostosDiaAtraccion { get => costosDiaAtraccion;}
         public double CostosDiaTotales { get => costosDiaTotales;}
         public DateTime Fecha { get => fecha;}
+
+        public void CalcularNroIngresosDias(List<Persona> personas, DateTime fechaReporte)
+        {
+            nroIngresosDia = 0;
+            foreach (var item in personas)
+            {
+                Usuario usuario = item as Usuario;
+                if (usuario.FechaIngresoParque == fechaReporte)
+                {                   
+                    nroIngresosDia++;
+                }
+            }
+        }
+
+        public void CalcularIngresosAtracciones(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
+        {
+            foreach (var item in atracciones)
+            {
+                item.TotalUsuariosIngresados = 0;
+            }
+            foreach (var item in personas)
+            {
+                Usuario usuario = item as Usuario;
+                foreach (var ingreso in usuario.Dueño.IngresosAtracciones)
+                {
+                    if (ingreso.FechaIngreso == fechaReporte)
+                    {
+                        foreach (var atraccion in atracciones)
+                        {
+                            if(ingreso.Atraccion == atraccion)
+                            {
+                                atraccion.TotalUsuariosIngresados++;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        public void CalcularCostoAtracciones(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
+        {
+            foreach (var item in atracciones)
+            {
+                item.TotalCostos = 0;
+            }
+            foreach (var item in personas)
+            {
+                Usuario usuario = item as Usuario;
+                foreach (var ingreso in usuario.Dueño.IngresosAtracciones)
+                {
+                    if (ingreso.FechaIngreso == fechaReporte)
+                    {
+                        foreach (var atraccion in atracciones)
+                        {
+                            if (ingreso.Atraccion == atraccion)
+                            {
+                                atraccion.TotalCostos++;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public void CalcularCostoDias(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
+        {
+            costosDiaTotales = 0;
+            CalcularCostoAtracciones(personas, fechaReporte, atracciones);
+            foreach (var item in atracciones)
+            {
+                costosDiaTotales += item.TotalCostos;
+            }
+        }
     }
 }

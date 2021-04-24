@@ -16,6 +16,8 @@ namespace ParqueDiversiones
         protected string descripcion;
         protected bool operando;
         protected double descuentos;
+        protected double totalUsuariosIngresados;
+        protected double totalCostos;
 
         public string Codigo { get => codigo; }
         public string Nombre { get => nombre; }
@@ -24,6 +26,8 @@ namespace ParqueDiversiones
         public double Costo { get => costo; }
         public string Descripcion { get => descripcion; }
         public bool Operando { get => operando; set => operando = value; }
+        public double TotalUsuariosIngresados { get => totalUsuariosIngresados; set => totalUsuariosIngresados = value; }
+        public double TotalCostos { get => totalCostos; set => totalCostos = value; }
 
         public Atraccion(string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion)
         {
