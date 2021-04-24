@@ -22,7 +22,6 @@ namespace ParqueDiversiones
 
             CalcularNroIngresosDias(personas, fechaReporte);
             CalcularInfoAtracciones(personas, fechaReporte, Atracciones);
-            CalcularCostoDias(personas, fechaReporte, Atracciones);
 
         }
 
@@ -59,21 +58,15 @@ namespace ParqueDiversiones
                     {
                         foreach (var atraccion in atracciones)
                         {
-                            if(ingreso.Atraccion == atraccion)
+                            if (ingreso.Atraccion == atraccion)
                             {
                                 atraccion.TotalUsuariosIngresados++;
                                 atraccion.TotalCostos += ingreso.Costo;
                             }
                         }
                     }
-                
-                
+                }
             }
-        }
-
-        public void CalcularCostoDias(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
-        {
-       
         }
     }
 }
