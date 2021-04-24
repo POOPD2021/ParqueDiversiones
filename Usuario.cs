@@ -16,7 +16,7 @@ namespace ParqueDiversiones
         { 
             this.estatura = estatura;
             GenerarManilla();
-            DateTime fechaIngresoParque = DateTime.Now;
+            this.fechaIngresoParque = DateTime.Now;
         }
 
         public double Estatura { get => estatura; }

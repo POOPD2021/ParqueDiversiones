@@ -183,11 +183,15 @@ namespace ParqueDiversiones
 
         static void GenerarReporte(List<Persona> personas, List<Atraccion> atracciones)
         {
+            
             ReporteCostos rc = new ReporteCostos(personas, DateTime.Now, atracciones);
-            Console.WriteLine(rc.NroIngresosDia);
-            Console.WriteLine(rc.IngresosDiaAtraccion);
-            Console.WriteLine(rc.CostosDiaAtraccion);
-            Console.WriteLine(rc.CostosDiaTotales);
+            Console.WriteLine("Numero de ingresos por día: " + rc.NroIngresosDia);
+            Console.WriteLine("Fecha:" + rc.Fecha);
+            foreach (var item in rc.Atracciones) 
+            {
+               
+                Console.WriteLine("Atraccion: " + item.Nombre+ " Total usuarios por día: "+item.TotalUsuariosIngresados +" Ganancias totales por dia: "+ item.TotalCostos);
+            }
         }
 
        
@@ -251,7 +255,7 @@ namespace ParqueDiversiones
             }
         }
         /// <summary>
-        /// Pregunta la fecha en el formata Año/mes/dia, los cuarda en un arreglo y crea un datetime
+        /// Pregunta la fecha en el formata Año/mes/dia, los guarda en un arreglo y crea un datetime
         /// </summary>
         /// <Datetime></returns>
         static DateTime SolicitarFecha()

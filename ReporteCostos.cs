@@ -9,31 +9,27 @@ namespace ParqueDiversiones
     class ReporteCostos
     {
         private int nroIngresosDia;
-        private double ingresosDiaAtraccion;
-        private double costosDiaAtraccion;
         private double costosDiaTotales;
         private DateTime fecha;
+        List<Atraccion> atracciones = new List<Atraccion>();
 
-        public ReporteCostos(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
+
+        public ReporteCostos(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atrs)
         {
-            
-            this.ingresosDiaAtraccion = 0;
-            this.costosDiaAtraccion = 0;
+            this.Atracciones = atrs;
             this.costosDiaTotales = 0;
             this.fecha = DateTime.Now;
 
             CalcularNroIngresosDias(personas, fechaReporte);
-            CalcularIngresosAtracciones(personas, fechaReporte, atracciones);
-            CalcularCostoAtracciones(personas, fechaReporte, atracciones);
-            CalcularCostoDias(personas, fechaReporte, atracciones);
+            CalcularInfoAtracciones(personas, fechaReporte, Atracciones);
+            CalcularCostoDias(personas, fechaReporte, Atracciones);
 
         }
 
         public int NroIngresosDia { get => nroIngresosDia;}
-        public double IngresosDiaAtraccion { get => ingresosDiaAtraccion;}
-        public double CostosDiaAtraccion { get => costosDiaAtraccion;}
         public double CostosDiaTotales { get => costosDiaTotales;}
         public DateTime Fecha { get => fecha;}
+        public List<Atraccion> Atracciones { get => atracciones; set => atracciones = value; }
 
         public void CalcularNroIngresosDias(List<Persona> personas, DateTime fechaReporte)
         {
@@ -41,14 +37,14 @@ namespace ParqueDiversiones
             foreach (var item in personas)
             {
                 Usuario usuario = item as Usuario;
-                if (usuario.FechaIngresoParque == fechaReporte)
+                if (usuario.FechaIngresoParque.ToString("dd/MM/yyyy") == fechaReporte.ToString("dd/MM/yyyy"))
                 {                   
                     nroIngresosDia++;
                 }
             }
         }
 
-        public void CalcularIngresosAtracciones(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
+        public void CalcularInfoAtracciones(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
         {
             foreach (var item in atracciones)
             {
@@ -59,55 +55,25 @@ namespace ParqueDiversiones
                 Usuario usuario = item as Usuario;
                 foreach (var ingreso in usuario.Dueño.IngresosAtracciones)
                 {
-                    if (ingreso.FechaIngreso == fechaReporte)
+                    if (ingreso.FechaIngreso.ToString("dd/MM/yyyy") == fechaReporte.ToString("dd/MM/yyyy"))
                     {
                         foreach (var atraccion in atracciones)
                         {
                             if(ingreso.Atraccion == atraccion)
                             {
                                 atraccion.TotalUsuariosIngresados++;
+                                atraccion.TotalCostos += ingreso.Costo;
                             }
                         }
                     }
-                }
                 
-            }
-        }
-
-        public void CalcularCostoAtracciones(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
-        {
-            foreach (var item in atracciones)
-            {
-                item.TotalCostos = 0;
-            }
-            foreach (var item in personas)
-            {
-                Usuario usuario = item as Usuario;
-                foreach (var ingreso in usuario.Dueño.IngresosAtracciones)
-                {
-                    if (ingreso.FechaIngreso == fechaReporte)
-                    {
-                        foreach (var atraccion in atracciones)
-                        {
-                            if (ingreso.Atraccion == atraccion)
-                            {
-                                atraccion.TotalCostos++;
-                            }
-                        }
-                    }
-                }
-
+                
             }
         }
 
         public void CalcularCostoDias(List<Persona> personas, DateTime fechaReporte, List<Atraccion> atracciones)
         {
-            costosDiaTotales = 0;
-            CalcularCostoAtracciones(personas, fechaReporte, atracciones);
-            foreach (var item in atracciones)
-            {
-                costosDiaTotales += item.TotalCostos;
-            }
+       
         }
     }
 }
