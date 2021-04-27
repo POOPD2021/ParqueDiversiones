@@ -21,11 +21,15 @@ namespace ParqueDiversiones
 
         public double Estatura { get => estatura; }
         public DateTime FechaIngresoParque { get => fechaIngresoParque;}
-        internal Manilla Dueño { get => dueño; }
+        public Manilla Dueño { get => dueño; }
        
         public void GenerarManilla()
         {
             dueño = new Manilla();
+        }
+        public override string ToString()
+        {
+            return "Nombre:  " + Nombre + "   | Documento: " + DocID+ "   |Saldo: " + Dueño.Saldo.ToString();
         }
     }
 }

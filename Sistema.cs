@@ -14,8 +14,10 @@ namespace ParqueDiversiones
             List<Atraccion> atracciones = new List<Atraccion>();
             List<ReporteCostos> reporteCostos = new List<ReporteCostos>();
             PersistenciaAtraccion prAtraccion = new PersistenciaAtraccion();
+            IpersistenciaAtraccion iprAtraccion = new prAtraccionExcel();
 
-            prAtraccion.ActualizarInfoAtr(atracciones); //Asegura que la informacion acerca de las atracciones se va actualizar cada que se inicie el programa
+
+            iprAtraccion.ActualizarInfoAtr(atracciones); //Asegura que la informacion acerca de las atracciones se va actualizar cada que se inicie el programa
             
             int opcion = default;
             do
@@ -84,19 +86,44 @@ namespace ParqueDiversiones
                                 return;
                             }
                             Console.WriteLine("Por favor, ingrese el código");
-                            string codigoA = Console.ReadLine();
+                            string codigo = Console.ReadLine();
                             Console.WriteLine("Por favor, ingrese el nombre");
-                            string nombreA = Console.ReadLine();
+                            string nombreAtraccion = Console.ReadLine();
                             Console.WriteLine("Por favor, ingrese el límite de edad");
-                            int limite_de_edadA = int.Parse(Console.ReadLine());
+                            int limite_de_edad = int.Parse(Console.ReadLine());
                             Console.WriteLine("Por favor, ingrese el límite de estatura");
-                            double limite_de_estaturaA = double.Parse(Console.ReadLine());
+                            double limite_de_estatura = double.Parse(Console.ReadLine());
                             Console.WriteLine("Por favor, ingrese el costo");
-                            double costoA = double.Parse(Console.ReadLine());
+                            double costo = double.Parse(Console.ReadLine());
                             Console.WriteLine("Por favor, ingrese una descripción de la atracción");
-                            string descripcionA = Console.ReadLine();
+                            string descripcion = Console.ReadLine();
+                            Atraccion atr=null;
+                            if (tipoAtraccion == 1)
+                            {
+                                atr = new Mecanica("MC" + codigo, nombreAtraccion, limite_de_edad, limite_de_estatura, costo, descripcion);
+                                Console.WriteLine("Se ha registrado una atracción mecánica con éxito.");
 
-                            prAtraccion.RegistrarAtraccion(tipoAtraccion, codigoA, nombreA, limite_de_edadA, limite_de_estaturaA, costoA, descripcionA, atracciones);
+                           
+                            }
+                            else if (tipoAtraccion == 2)
+                            {
+                                atr = new Acuatica("AC" + codigo, nombreAtraccion, limite_de_edad, limite_de_estatura, costo, descripcion);
+                               
+                                Console.WriteLine("Se ha registrado una atracción acuática con éxito.");
+
+                               
+                            }
+                            else if (tipoAtraccion == 3)
+                            {
+                                atr = new Acuatica("AC" + codigo, nombreAtraccion, limite_de_edad, limite_de_estatura, costo, descripcion);
+
+                                Console.WriteLine("Se ha registrado una atracción virtual con éxito.");
+
+                               
+                            }
+                            atracciones.Add(atr);
+
+                            prAtraccion.RegistrarAtraccion(atr);
                             break;
 
                         case 5:
@@ -167,16 +194,16 @@ namespace ParqueDiversiones
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("");
             Console.WriteLine("==[Menu]=================================");
-            Console.WriteLine("[1] Generar reporte");//falta Stefa
+            Console.WriteLine("[1] Generar reporte");
             Console.WriteLine("[2] Registrar persona");
-            Console.WriteLine("[3] Recargar manilla");//falta  Pablo
-            Console.WriteLine("[4] Registrar atracción");//listo
-            Console.WriteLine("[5] Consultar información atracción");//listo
-            Console.WriteLine("[6] Consultar información usuarios");//listo
-            Console.WriteLine("[7] Consultar información empleados");//listo
+            Console.WriteLine("[3] Recargar manilla");
+            Console.WriteLine("[4] Registrar atracción");
+            Console.WriteLine("[5] Consultar información atracción");
+            Console.WriteLine("[6] Consultar información usuarios");
+            Console.WriteLine("[7] Consultar información empleados");
             Console.WriteLine("[8] Asignar atracción a un empleado");
-            Console.WriteLine("[9] Listar atracciones");//ya
-            Console.WriteLine("[10] Ingresar a atracción");//falta Samuel
+            Console.WriteLine("[9] Listar atracciones");
+            Console.WriteLine("[10] Ingresar a atracción");
             Console.WriteLine("[0] Salir");
             Console.WriteLine("=========================================");
         }
@@ -276,7 +303,7 @@ namespace ParqueDiversiones
 
             return fechaNacimiento;
         }
-       
 
+     
     }
 }

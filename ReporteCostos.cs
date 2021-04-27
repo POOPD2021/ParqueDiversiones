@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class ReporteCostos
+    public class ReporteCostos
     {
         private int nroIngresosDia;
         private double costosDiaTotales;

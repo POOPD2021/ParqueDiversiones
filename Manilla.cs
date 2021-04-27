@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class Manilla
+    public class Manilla
     {
         private double saldo;
         List<Ingreso> ingresosAtracciones = new List<Ingreso>();

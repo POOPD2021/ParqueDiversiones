@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParqueDiversiones
 {
-    class Ingreso
+    public class Ingreso
     {
         private DateTime fechaIngreso;
         private double descuento;

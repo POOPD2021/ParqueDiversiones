@@ -13,7 +13,7 @@ namespace ParqueDiversiones.Persistencia
         /// Abre el archivo de texto y lee las atracciones que están escritas
         /// </summary>
         /// <param name="atracciones"></param>
-        public  void ActualizarInfoAtr(List<Atraccion> atracciones)
+        public List<Atraccion> ActualizarInfoAtr(List<Atraccion> atracciones)
         {
             string path = "Atracciones_PD.txt";
             string linea = "";
@@ -47,38 +47,31 @@ namespace ParqueDiversiones.Persistencia
 
                 }
             }
+            return atracciones;
         }
-       public  void RegistrarAtraccion(int tipoAtraccion, string codigo, string nombre, int limite_de_edad, double limite_de_estatura, double costo, string descripcion, List<Atraccion> atracciones)
+       public  void RegistrarAtraccion(Atraccion atr)
         {
-            if (tipoAtraccion == 1)
-            {
-                atracciones.Add(new Mecanica("MC" + codigo, nombre, limite_de_edad, limite_de_estatura, costo, descripcion));
-                Console.WriteLine("Se ha registrado una atracción mecánica con éxito.");
+            string prefijo="";
 
-                using (StreamWriter sw = File.AppendText("Atracciones_PD.txt"))
-                {
-                    sw.WriteLine("MC" + "|" + codigo + "|" + nombre + "|" + limite_de_edad + "|" + limite_de_estatura + "|" + costo + "|" + descripcion);
-                }
+            if (atr.GetType().Name.ToUpper() == "MECANICA") 
+            {
+                prefijo = "MC";
+
             }
-            else if (tipoAtraccion == 2)
+            else if (atr.GetType().Name.ToUpper() == "VIRTUAL")
             {
-                atracciones.Add(new Acuatica("AC" + codigo, nombre, limite_de_edad, limite_de_estatura, costo, descripcion));
-                Console.WriteLine("Se ha registrado una atracción acuática con éxito.");
+                prefijo = "VI";
 
-                using (StreamWriter sw = File.AppendText("Atracciones_PD.txt"))
-                {
-                    sw.WriteLine("AC" + "|" + codigo + "|" + nombre + "|" + limite_de_edad + "|" + limite_de_estatura + "|" + costo + "|" + descripcion);
-                }
             }
-            else if (tipoAtraccion == 3)
+            else if (atr.GetType().Name.ToUpper() == "ACUATICA")
             {
-                atracciones.Add(new Virtual("VI" + codigo, nombre, limite_de_edad, limite_de_estatura, costo, descripcion));
-                Console.WriteLine("Se ha registrado una atracción virtual con éxito.");
 
-                using (StreamWriter sw = File.AppendText("Atracciones_PD.txt"))
-                {
-                    sw.WriteLine("VI" + "|" + codigo + "|" + nombre + "|" + limite_de_edad + "|" + limite_de_estatura + "|" + costo + "|" + descripcion);
-                }
+                prefijo = "AC";
+
+            }
+            using (StreamWriter sw = File.AppendText("Atracciones_PD.txt"))
+            {
+                sw.WriteLine(prefijo + "|" + atr.Codigo + "|" + atr.Nombre + "|" + atr.Limite_de_edad + "|" + atr.Limite_de_estatura + "|" + atr.Costo + "|" + atr.Descripcion);
             }
         }
     }
