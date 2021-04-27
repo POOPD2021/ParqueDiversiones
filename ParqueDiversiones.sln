@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParqueDiversiones", "ParqueDiversiones.csproj", "{CFBBB7EF-2B46-4926-938B-65C451DFCFEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParqueDiversiones_Form", "..\ParqueDiversiones_Form\ParqueDiversiones_Form.csproj", "{678F86C6-7A83-4D6B-A134-40F9E0735F7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParqueDiversiones_Form", "..\ParqueDiversiones_Form\ParqueDiversiones_Form.csproj", "{F84EAC56-C8D7-4624-953D-78711BD84C4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{CFBBB7EF-2B46-4926-938B-65C451DFCFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFBBB7EF-2B46-4926-938B-65C451DFCFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFBBB7EF-2B46-4926-938B-65C451DFCFEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{678F86C6-7A83-4D6B-A134-40F9E0735F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{678F86C6-7A83-4D6B-A134-40F9E0735F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{678F86C6-7A83-4D6B-A134-40F9E0735F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{678F86C6-7A83-4D6B-A134-40F9E0735F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84EAC56-C8D7-4624-953D-78711BD84C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84EAC56-C8D7-4624-953D-78711BD84C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84EAC56-C8D7-4624-953D-78711BD84C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84EAC56-C8D7-4624-953D-78711BD84C4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

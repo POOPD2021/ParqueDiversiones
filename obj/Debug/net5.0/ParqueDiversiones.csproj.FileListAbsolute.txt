@@ -1,0 +1,80 @@
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.exe
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.deps.json
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.json
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.dev.json
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csprojAssemblyReference.cache
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfoInputs.cache
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfo.cs
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csproj.CoreCompileInputs.cache
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\source\repos\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.genruntimeconfig.cache
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.exe
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.deps.json
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.json
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.dev.json
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csprojAssemblyReference.cache
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfoInputs.cache
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfo.cs
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csproj.CoreCompileInputs.cache
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\Hogar\Downloads\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.genruntimeconfig.cache
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.exe
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.deps.json
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.json
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.dev.json
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csprojAssemblyReference.cache
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfoInputs.cache
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfo.cs
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csproj.CoreCompileInputs.cache
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\Desktop\Nueva carpeta (5)\ParqueDiversiones_Form\POOPD2021\ParqueDiversiones\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.genruntimeconfig.cache
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.exe
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.deps.json
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.json
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.dev.json
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\bin\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csprojAssemblyReference.cache
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfoInputs.cache
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfo.cs
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csproj.CoreCompileInputs.cache
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\Desktop\ProyectoPoo\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.genruntimeconfig.cache
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csprojAssemblyReference.cache
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfoInputs.cache
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.AssemblyInfo.cs
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.csproj.CoreCompileInputs.cache
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.exe
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.deps.json
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.json
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.runtimeconfig.dev.json
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\bin\Debug\net5.0\ref\ParqueDiversiones.dll
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\bin\Debug\net5.0\ParqueDiversiones.pdb
+C:\Users\samue\Desktop\ProyectoFinal\ParqueDiversiones\obj\Debug\net5.0\ParqueDiversiones.genruntimeconfig.cache

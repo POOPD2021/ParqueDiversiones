@@ -14,10 +14,10 @@ namespace ParqueDiversiones
             List<Atraccion> atracciones = new List<Atraccion>();
             List<ReporteCostos> reporteCostos = new List<ReporteCostos>();
             PersistenciaAtraccion prAtraccion = new PersistenciaAtraccion();
-            IpersistenciaAtraccion iprAtraccion = new prAtraccionExcel();
+            //IpersistenciaAtraccion iprAtraccion = new prAtraccionExcel();
 
 
-            iprAtraccion.ActualizarInfoAtr(atracciones); //Asegura que la informacion acerca de las atracciones se va actualizar cada que se inicie el programa
+            //iprAtraccion.ActualizarInfoAtr(atracciones); //Asegura que la informacion acerca de las atracciones se va actualizar cada que se inicie el programa
             
             int opcion = default;
             do
